@@ -1,0 +1,30 @@
+﻿@using EntityLayer.Concrete
+@model EntityLayer.Concrete.ToDo
+@{
+    Layout = null;
+}
+
+<form method="post">
+    <div>
+        <h1>To Do List Ekle</h1>
+        <div style="margin:4px">
+            <label>Todo İsim :</label>
+            <input asp-for="Name" />
+        </div>
+        <div style="margin:4px">
+            <label>Todo Açılama :</label>
+            <input asp-for="Description" />
+        </div>
+        <div style="margin:4px">
+            <label>Todo Kategori </label>
+                <select id="catagory" asp-for="CategoryId">
+                    @foreach (var item in ViewBag.v1)
+                    {
+                        <option value="@item.Id">@item.Name</option>
+                    }
+                </select>
+        </div>
+       
+    </div>
+    <button type="submit">Todo Ekle</button>
+</form>

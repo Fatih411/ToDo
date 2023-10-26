@@ -27,7 +27,7 @@ namespace PresentationLayer.Controllers
             var result = await _signInManager.PasswordSignInAsync(model.UserName, model.Password,false,false);
             if (result.Succeeded)
             {
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Index", "ToDo");
             }
 
             return View();

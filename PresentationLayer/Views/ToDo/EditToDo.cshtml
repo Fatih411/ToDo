@@ -1,17 +1,35 @@
 ﻿@model EntityLayer.Concrete.ToDo
 @{
-    Layout = null;
     ViewData["Title"] = "EditToDo";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<form method="post">
+<form method="post" action="/ToDo/EditToDo">
     <div>
-        <label for="Name">To Do List Ekle</label>
-        <input asp-for="Id" />
-      
-        <input asp-for="Name" />
-        <input asp-for="Description" />
-       
+        <h1>To Do List Güncelle</h1>
+        <input asp-for="Id" type="hidden"/>
+        <div style="margin:2px">
+            <label>İsim :</label>
+            <input asp-for="Name" />
+        </div>
+        <div style="margin:2px">
+            <label>Açıklama :</label>
+            <input asp-for="Description" />
+        </div>
+
+        <div style="margin:2px">
+            <label>Aktif mi? </label>
+            <input asp-for="Status">
+        </div>
+        <div style="margin:2px">
+            <label>Kategori :</label>
+            <select id="catagory" asp-for="CategoryId">
+                @foreach (var item in ViewBag.v2)
+                {
+                    <option value="@item.Id">@item.Name</option>
+                }
+            </select>
+        </div>
     </div>
     <button type="submit" class="btn btn-primary mr-2">Kaydet</button>
 </form>

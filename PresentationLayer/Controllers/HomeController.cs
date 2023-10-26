@@ -38,17 +38,7 @@ namespace PresentationLayer.Controllers
             var result = toDoManager.TGetAll();
             return View(result);
         }
-        [HttpGet]
-        public async Task<IActionResult> ToDoAdd()
-        {
-            return View();
-        }
-        [HttpPost]
-        public async Task<IActionResult> ToDoAdd(CreateTodo createTodo)
-        {
-           
-            return View();
-        }
+        
 
         public IActionResult Privacy()
         {

@@ -19,24 +19,20 @@ namespace PresentationLayer.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        ToDoManager toDoManager = new ToDoManager(new EfTodoDal());
-        readonly UserManager<User> _userManager;
        
-        public HomeController(ILogger<HomeController> logger, UserManager<User> userManager)
+       
+        public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
-            _userManager = userManager;
+            
 
         }
 
         [HttpGet]
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
-            var values = await _userManager.FindByNameAsync(User.Identity.Name);
-            ViewBag.v1 = values.UserName;
-
-            var result = toDoManager.TGetAll();
-            return View(result);
+            
+            return View();
         }
         
 

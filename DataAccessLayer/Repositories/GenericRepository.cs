@@ -25,7 +25,7 @@ namespace DataAccessLayer.Repositories
             return context.Set<T>().ToList();
         }
 
-        public T GetById(Guid id)
+        public T GetById(int id)
         {
             using var context = new Context();
             return context.Set<T>().Find(id);

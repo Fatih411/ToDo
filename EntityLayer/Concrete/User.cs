@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace EntityLayer.Concrete
 {
-    public class User: IdentityUser<string>
+    public class User: IdentityUser<int>
     {
         public ICollection<ToDo> ToDos { get; set; }
     }

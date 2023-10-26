@@ -11,32 +11,32 @@ namespace PresentationLayer.Controllers
     {
         ToDoManager toDoManager = new ToDoManager(new EfTodoDal());
         readonly UserManager<User> _userManager;
-        CategoryManager categoryManager=new CategoryManager(new EfCategoryDal());
+        CategoryManager categoryManager = new CategoryManager(new EfCategoryDal());
 
         public ToDoController(UserManager<User> userManager)
         {
             _userManager = userManager;
         }
-    
+
         public IActionResult Index()
         {
             var result = categoryManager.TGetAll();
             ViewBag.v2 = result;
             return View();
         }
-        [Route("Todo/DeleteTodo/{id}")]
-        public IActionResult DeleteTodo(string id)
+       // [Route("Todo/DeleteTodo/{id}")]
+        public IActionResult DeleteTodo(int id)
         {
-            var values = toDoManager.GetById(Guid.Parse(id));
+            var values = toDoManager.GetById(id);
             toDoManager.TDelete(values);
-            return RedirectToAction("Index","Home");
+            return RedirectToAction("Index", "Home");
         }
 
         //[Route("Todo/EditToDo/{id}")]
         [HttpGet]
-        public IActionResult EditToDo(string id)
+        public IActionResult EditToDo(int id)
         {
-            var values = toDoManager.GetById(Guid.Parse(id));
+            var values = toDoManager.GetById(id);
             return View(values);
         }
         [HttpPost]
@@ -57,7 +57,6 @@ namespace PresentationLayer.Controllers
             var userId = await _userManager.GetUserAsync(User);
             toDoManager.TInsert(new()
             {
-                Id = Guid.NewGuid(),
                 CategoryId = createTodo.CategoryId,
                 Description = createTodo.Description,
                 Name = createTodo.Name,

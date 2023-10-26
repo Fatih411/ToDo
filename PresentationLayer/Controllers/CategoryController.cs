@@ -24,7 +24,6 @@ namespace PresentationLayer.Controllers
         {
             categoryManager.TInsert(new()
             {
-                Id = Guid.NewGuid(),
                 Name = model.Name,
                 CreateDate = DateTime.Now,
                 UpdateDate = DateTime.Now,

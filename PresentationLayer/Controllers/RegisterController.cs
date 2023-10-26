@@ -26,7 +26,6 @@ namespace PresentationLayer.Controllers
             {
                 User user = new()
                 {
-                    Id = Guid.NewGuid().ToString(),
                     UserName = _user.UserName,
                     Email = _user.Email,
                 };

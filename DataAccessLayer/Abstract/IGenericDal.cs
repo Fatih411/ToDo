@@ -12,7 +12,7 @@ namespace DataAccessLayer.Abstract
         void Insert(T t);
         void Update(T t);
         void Delete(T t);
-        T GetById(Guid id);
+        T GetById(int id);
         List<T> GetAll();
     }
 }

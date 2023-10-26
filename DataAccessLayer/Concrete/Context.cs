@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Concrete
 {
-    public class Context:IdentityDbContext<User,Role,string>
+    public class Context:IdentityDbContext<User,Role,int>
     {
         public DbSet<Category> Categories { get; set; }
         public DbSet<ToDo> ToDos { get; set; }

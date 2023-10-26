@@ -10,8 +10,8 @@ namespace DTOLayer.Dtos.ToDoDtos
     {
         public string Name { get; set; }
         public string Description { get; set; }
-        public string UserId { get; set; }
-        public Guid CategoryId { get; set; }
+        public int UserId { get; set; }
+        public int CategoryId { get; set; }
         public DateTime CreateDate { get; set; }
         public DateTime UpdateDate { get; set; }
     }

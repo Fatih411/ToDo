@@ -18,7 +18,7 @@ namespace BusinessLayer.Concrete
             _toDo = toDo;
         }
 
-        public ToDo GetById(Guid id)
+        public ToDo GetById(int id)
         {
            return _toDo.GetById(id);
         }

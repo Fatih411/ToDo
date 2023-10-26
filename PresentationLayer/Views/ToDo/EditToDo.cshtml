@@ -1,0 +1,16 @@
+﻿@model EntityLayer.Concrete.ToDo
+@{
+    Layout = null;
+}
+
+<form method="post">
+    <div>
+        <label for="Name">To Do List Ekle</label>
+        <input asp-for="Id" />
+      
+        <input asp-for="Name" />
+        <input asp-for="Description" />
+       
+    </div>
+    <button type="submit" class="btn btn-primary mr-2">Kaydet</button>
+</form>

@@ -1,0 +1,13 @@
+﻿@model DTOLayer.Dtos.CategoryDtos.CreateCategory
+@{
+    ViewData["Title"] = "CategoryAdd";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form method="post">
+        <div>
+            <label for="Name">Category Name:</label>
+            <input asp-for="Name" />
+        </div>
+    <button type="submit">Kategori Ekle</button>
+</form>

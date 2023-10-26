@@ -1,0 +1,21 @@
+﻿@model DTOLayer.Dtos.ToDoDtos.CreateTodo
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form method="post">
+        <div>
+            <label for="Name">To Do List Ekle</label>
+             <input asp-for="Name" />
+            <input asp-for="Description" />
+            <select id="catagory" asp-for="CategoryId">
+                @foreach(var item in ViewBag.v2)
+                {
+                    <option value="@item.Id">@item.Name</option>
+                    
+                }
+            </select>
+        </div>
+    <button type="submit">Todo Ekle</button>
+</form>
